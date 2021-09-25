@@ -16,24 +16,13 @@ function game(){
         [2,5,8],
         [0,4,8],
         [2,4,6]
-    ] 
-  
-    const checkWin = (position) => {
-       for(let i in winCombinations) {
-            let win = true;
-            for(let j in winCombinations[i]) {
-                if(position.includes(winCombinations[i][j]) == false) {
-                    win = false
-                }
-            }
-            if (win) return true;
-        }
-        return false; 
-    }
+    ];
+    
+    const checkWin = (filledPositions) => winCombinations.some((item) => item.every(elem => filledPositions.includes(elem))); 
 
     const clickMouse = (event) => {
-        let positionX = [];
-        let positionO = [];
+        const positionX = [];
+        const positionO = [];
         if (event.target.classList.contains('cell')){
             if (event.target.innerText) return;
             event.target.innerText = (turn%2 == 0) ? "X" : "O";
@@ -56,6 +45,7 @@ function game(){
             } 
             if (turn == 8 && !checkWin(positionX)){
                 resultGame.innerText = 'dead heat';
+                field.removeEventListener("click", clickMouse);
             }
             turn++;
         } 
