@@ -1,0 +1,43 @@
+main {
+  width: 50%;
+  margin: 50px auto;
+}
+.field {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 190px;
+  height: 190px;
+}
+.field div {
+  box-sizing: border-box;
+  border: 1px solid grey;
+  width: 50px;
+  height: 50px;
+  font-size: 25px;
+  text-align: center;
+  padding: 10px;
+  margin: 5px;
+  box-shadow: 2px 2px 2px gray;
+}
+.btn {
+  background-color: white;
+  border: 2px solid grey;
+  width: 100px;
+  height: 30px;
+  box-shadow: 2px 2px 2px grey;
+  color: black;
+}
+.btn:hover {
+  background-color: gray;
+}
+.btn:active {
+  width: 95px;
+  height: 25px;
+}
+.resultGame {
+  margin-top: 20px;
+  font-size: 16pt;
+  font-weight: 700;
+  color: red;
+}
